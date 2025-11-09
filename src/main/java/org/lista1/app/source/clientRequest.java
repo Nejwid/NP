@@ -102,4 +102,22 @@ public class clientRequest {
         this.orderID = generateID();
         return this.orderID;
     }
+
+    //zadanie 4.3
+    public void validate() throws IllegalArgumentException {
+        if (customer.getFirstName().isBlank() || customer.getLastName().isBlank()) {
+            throw new IllegalArgumentException("incorrect name/last name");
+        }
+        if(products.size()<1 || products.size()>9){
+            throw new IllegalArgumentException("invalid products count");
+        }
+
+        for (Product p : products) {
+            int quantity = p.getQuantity();
+
+            if (quantity < 1) {
+                throw new IllegalArgumentException("incorrect quantity");
+            }
+        }
+    }
 }
