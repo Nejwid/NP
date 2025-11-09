@@ -5,7 +5,5 @@
 *.zip
 *.iml
 
+## niewykluczenie katalogu data powoduje błąd git add .
 /data/
-data/gitaly/gitaly.socket
-data/gitaly/run/
-data/gitaly/*.socket
