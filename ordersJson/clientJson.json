@@ -1,0 +1,20 @@
+{
+  "customer": {
+    "firstName": "Jan",
+    "lastName": "Kowalski",
+    "email": "jankowalski@gmail.com",
+    "phoneNumber": "123 456 789"
+  },
+  "products": [
+    {
+      "productCode": "uszczelkaPassatB5",
+      "quantity": 100,
+      "unit": "szt"
+    },
+    {
+      "productCode": "kierunkowskazBMWe46",
+      "quantity": 4,
+      "unit": "szt"
+    }
+  ]
+}

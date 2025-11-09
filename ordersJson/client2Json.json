@@ -1,0 +1,25 @@
+{
+  "customer": {
+    "firstName": "Niepolitechnika",
+    "lastName": "Niewrocławska",
+    "email": "kontakt@w4rto.com",
+    "phoneNumber": "987 654 321"
+  },
+  "products": [
+    {
+      "productCode": "smyczLogo",
+      "quantity": 5000,
+      "unit": "szt"
+    },
+    {
+      "productCode": "kalendarzLogo",
+      "quantity": 2500,
+      "unit": "szt"
+    },
+    {
+      "productCode": "brelokLogo",
+      "quantity": "3000",
+      "unit": "szt"
+    }
+  ]
+}

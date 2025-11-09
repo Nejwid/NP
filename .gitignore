@@ -1,0 +1,11 @@
+/.idea/
+/.mvn/
+/target/
+
+*.zip
+*.iml
+
+/data/
+data/gitaly/gitaly.socket
+data/gitaly/run/
+data/gitaly/*.socket

@@ -1,0 +1,9 @@
+version: '3.8'
+
+services:
+  Lista1_dockerApp:
+    image: lastry5:latest
+    container_name: last-test
+    volumes:
+      - ./ordersJson:/app/ordersJson
+    restart: no
