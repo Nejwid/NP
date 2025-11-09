@@ -38,6 +38,13 @@
             <scope>test</scope>
         </dependency>
 
+        <dependency>
+            <groupId>com.github.nylle</groupId>
+            <artifactId>javafixture</artifactId>
+            <version>2.13.1</version>
+            <scope>test</scope>
+        </dependency>
+
     </dependencies>
 
     <build>
