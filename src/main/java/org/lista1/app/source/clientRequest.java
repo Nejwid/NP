@@ -30,11 +30,11 @@ public class clientRequest {
         return products;
     }
 
-    static class Customer{ /** klasa jest static bo wtedy moze istniec bez instancji klasy zewnetrznej*/
+    public static class Customer{ /** klasa jest static bo wtedy moze istniec bez instancji klasy zewnetrznej*/
         private final String firstName, lastName,email, phoneNumber;
         @JsonCreator
                 /**mapowanie danych z pliku json do pól*/
-        Customer(@JsonProperty("firstName") String firstName, @JsonProperty("lastName") String lastName, @JsonProperty("email") String email, @JsonProperty("phoneNumber") String phoneNumber ){
+        public Customer(@JsonProperty("firstName") String firstName, @JsonProperty("lastName") String lastName, @JsonProperty("email") String email, @JsonProperty("phoneNumber") String phoneNumber ){
             this.email = email;
             this.lastName = lastName;
             this.firstName = firstName;
@@ -54,12 +54,12 @@ public class clientRequest {
         }
     }
 
-    static class Product {
+    public static class Product {
         private final String unit, productCode;
         private final int quantity;
 
         @JsonCreator
-        Product(@JsonProperty("productCode") String procuctCode, @JsonProperty("quantity") int quantity, @JsonProperty("unit") String unit) {
+        public Product(@JsonProperty("productCode") String procuctCode, @JsonProperty("quantity") int quantity, @JsonProperty("unit") String unit) {
             this.unit = unit;
             this.productCode = procuctCode;
             this.quantity = quantity;
@@ -95,7 +95,7 @@ public class clientRequest {
         return id.replaceAll("\\s+", "");
     }
 
-    String getOrderID(){
+    public String getOrderID(){
         if(!this.orderID.isEmpty()){
             return this.orderID;
         }
