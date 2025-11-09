@@ -18,7 +18,10 @@ public class Main {
         for (String json : jsonRequests) {
             try {
                 clientRequest temp = mapper.readValue(json, clientRequest.class); /** "tymczasowe" obiekty na zamowienia*/
+                temp.validate();
                 requests.add(temp);
+            } catch (IllegalArgumentException e){
+                System.err.println("Błąd poprawnosci danych zamowienia" + e.getMessage());
             } catch (Exception e) {
                 System.err.println("Błąd przy deserializacji JSON" + e.getMessage());
                 e.printStackTrace();
