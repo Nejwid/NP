@@ -112,12 +112,21 @@ public class clientRequest {
             throw new IllegalArgumentException("invalid products count");
         }
 
+        int productWeightKG = 0;
         for (Product p : products) {
             int quantity = p.getQuantity();
 
             if (quantity < 1) {
                 throw new IllegalArgumentException("incorrect quantity");
             }
+
+            if(p.getUnit().equals("kg")){
+                productWeightKG += quantity;
+            }
+        }
+
+        if(productWeightKG > 2000){
+            throw new IllegalArgumentException("too heavy");
         }
     }
 }

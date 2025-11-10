@@ -27,7 +27,7 @@ public class TestClientRequest {
         randomProducts = IntStream.range(0, productCount)
                 .mapToObj(i -> new clientRequest.Product(
                         generateRandomString(3),            // productCode
-                        Math.abs(fixture.create(Integer.class)) % 100 + 1, // quantity >= 1
+                        Math.abs(fixture.create(Integer.class)) % 300 + 1, // quantity >= 1
                         randomUnit()             // unit
                 ))
                 .collect(Collectors.toList());
