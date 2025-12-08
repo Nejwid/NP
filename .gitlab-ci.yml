@@ -1,0 +1,32 @@
+# Domyślny obraz do wszystkich etapów (Maven + JDK)
+image: maven:3.9-eclipse-temurin-17
+
+# Definicja etapów
+stages:
+  - build
+  - lint
+  - test
+
+# Cache dla zależności Maven (przyspiesza kolejne uruchomienia)
+cache:
+  paths:
+    - .m2/repository
+
+# 1. Kompilacja
+build:
+  stage: build
+  script:
+    - mvn compile
+
+# 2. Analiza statyczna kodu (Checkstyle)
+lint:
+  stage: lint
+  script:
+    - mvn checkstyle:check
+  allow_failure: false  # Jeżeli analiza się nie powiedzie, pipeline zatrzymuje się
+
+# 3. Testy jednostkowe
+test:
+  stage: test
+  script:
+    - mvn test
