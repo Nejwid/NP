@@ -28,5 +28,7 @@ lint:
 # 3. Testy jednostkowe
 test:
   stage: test
+  tags:
+    - zadanie3lista5
   script:
     - mvn test
