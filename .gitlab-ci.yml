@@ -15,6 +15,14 @@ build:
   script:
     - mvn compile
 
+lint:
+  stage: lint
+  tags:
+    - zadanie3lista5
+  script:
+    - mvn checkstyle:check
+  allow_failure: true
+
 test:
   stage: test
   tags:
