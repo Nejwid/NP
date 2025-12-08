@@ -8,6 +8,8 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class Main {
     public static void main(String[] args) {
+        System.out.println(xmlVersion.getVersion());
+
         apacheConfig jsonPath = new apacheConfig();
         //System.out.print(jsonLoader.getOrderRequestsDirectory());
         jsonLoader loader = new jsonLoader(jsonPath.getOrderRequestsDirectory());
