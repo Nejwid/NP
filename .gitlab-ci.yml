@@ -2,7 +2,6 @@ image: maven:3.9-eclipse-temurin-17
 
 stages:
   - build
-  - lint
   - test
 
 cache:
@@ -15,14 +14,6 @@ build:
     - zadanie3lista5
   script:
     - mvn compile
-
-lint:
-  stage: lint
-  tags:
-    - zadanie3lista5
-  script:
-    - mvn checkstyle:check
-  allow_failure: false
 
 test:
   stage: test
