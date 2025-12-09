@@ -34,6 +34,9 @@ test:
 
 deploy:
   stage: deploy
+  image: docker:20.10
+  services:
+    - docker:dind
   tags:
     - zadanie3lista5
   script:
