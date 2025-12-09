@@ -4,6 +4,7 @@ stages:
   - build
   - lint
   - test
+  - deploy
 
 cache:
   paths:
@@ -30,3 +31,14 @@ test:
     - zadanie3lista5
   script:
     - mvn test
+
+deploy:
+  stage: deploy
+  tags:
+    - zadanie3lista5
+  script:
+    - echo "builds and sends docker image to host 5000"
+    - docker build -t host.docker.internal:5000/order-app:$CI_COMMIT_TAG .
+    - docker push host.docker.internal:5000/order-app:$CI_COMMIT_TAG
+  only:
+    - tags
