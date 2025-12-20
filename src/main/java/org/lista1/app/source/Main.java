@@ -3,12 +3,19 @@ import java.util.ArrayList;
 import java.util.List;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+
 /** consider a company that imports any products upon customer request,
     anything from car parts to even custom neck lanyard with the university logo. */
 
 public class Main {
+    private static final Logger logger = LogManager.getLogger();
+
     public static void main(String[] args) {
-        System.out.println(xmlVersion.getVersion());
+        //System.out.println(xmlVersion.getVersion());
+        logger.info(xmlVersion.getVersion());
 
         apacheConfig jsonPath = new apacheConfig();
         //System.out.print(jsonLoader.getOrderRequestsDirectory());
@@ -30,8 +37,8 @@ public class Main {
             }
         }
         for (clientRequest request : requests) {
-            System.out.println(request.getOrderID());
+            //System.out.println(request.getOrderID());
+            logger.info(request.getOrderID());
         }
     }
-    // squash commit?
 }
