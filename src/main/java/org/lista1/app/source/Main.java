@@ -39,6 +39,8 @@ public class Main {
         for (clientRequest request : requests) {
             //System.out.println(request.getOrderID());
             logger.info(request.getOrderID());
+            log4jOrders.logOrderDetails(request);
+            logger.info("---------------------");
         }
     }
     // squash commit?
