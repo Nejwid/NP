@@ -1,5 +1,6 @@
 package org.lista1.app.source;
 
+import io.opentelemetry.instrumentation.annotations.WithSpan;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -54,6 +55,7 @@ public class SMTP {
         return instance;
     }
 
+    @WithSpan
     public void sendOrderEmail(clientRequest order) {
         Properties props = new Properties();
         props.put("mail.smtp.host", smtpHost);

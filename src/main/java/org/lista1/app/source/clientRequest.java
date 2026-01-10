@@ -2,6 +2,7 @@ package org.lista1.app.source;
 import java.util.List;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import io.opentelemetry.instrumentation.annotations.WithSpan;
 
 /** this class contains client info and ordered products*/
 
@@ -104,6 +105,7 @@ public class clientRequest {
     }
 
     //zadanie 4.3
+    @WithSpan
     public void validate() throws IllegalArgumentException {
         if (customer.getFirstName().isBlank() || customer.getLastName().isBlank()) {
             throw new IllegalArgumentException("incorrect name/last name");

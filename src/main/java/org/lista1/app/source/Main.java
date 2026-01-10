@@ -6,6 +6,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import io.opentelemetry.instrumentation.annotations.WithSpan;
 
 /** consider a company that imports any products upon customer request,
     anything from car parts to even custom neck lanyard with the university logo. */
@@ -13,6 +14,7 @@ import org.apache.logging.log4j.Logger;
 public class Main {
     private static final Logger logger = LogManager.getLogger();
 
+    @WithSpan
     public static void main(String[] args) {
         //System.out.println(xmlVersion.getVersion());
         logger.info(xmlVersion.getVersion());
