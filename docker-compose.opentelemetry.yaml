@@ -1,0 +1,11 @@
+name: opentelemetry-collector
+services:
+  opentelemetry-collector:
+    image: otel/opentelemetry-collector:0.142.0
+    container_name: opentelemetry-collector
+    volumes:
+      - "./collector-config.yaml:/etc/otelcol/config.yaml"
+    ports:
+      - "4318:4318"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
