@@ -41,7 +41,9 @@ public class Main {
             logger.info(request.getOrderID());
             log4jOrders.logOrderDetails(request);
             logger.info("---------------------");
+            SMTP tempMail = SMTP.getInstance();
+            tempMail.sendOrderEmail(request); // trzeba wlaczyc mailpit.yaml
+            logger.info("---------------------");
         }
     }
-    // squash commit?
 }

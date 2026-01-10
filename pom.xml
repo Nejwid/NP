@@ -63,6 +63,7 @@
             <version>2.0.2</version>
         </dependency>
 
+        <!-- Java Activation (dla MimeBodyPart itp.) -->
         <dependency>
             <groupId>com.sun.activation</groupId>
             <artifactId>jakarta.activation</artifactId>
