@@ -9,11 +9,19 @@
         <Console name="CONSOLE">
             <PatternLayout pattern="%d %p %c: %m%n"/>
         </Console>
+
+        <Http name="OPEN_OBSERVE"
+              url="http://localhost:5080/api/default/default/_json">
+            <Property name="Content-Type" value="application/json" />
+            <Property name="Authorization" value="Basic cm9vdEBleGFtcGxlLmNvbTpwYXNz" />
+            <JsonLayout />
+        </Http>
     </Appenders>
 
     <Loggers>
         <Root level="INFO">
             <AppenderRef ref="CONSOLE"/>
+            <AppenderRef ref="OPEN_OBSERVE"/>
         </Root>
     </Loggers>
 
