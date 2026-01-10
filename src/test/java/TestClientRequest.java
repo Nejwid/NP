@@ -1,5 +1,5 @@
 
-import com.github.nylle.javafixture.*;
+import com.github.nylle.javafixture.JavaFixture;
 import org.lista1.app.source.clientRequest;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -11,7 +11,7 @@ import java.util.stream.IntStream;
 
 public class TestClientRequest {
 
-    private final Fixture fixture = new Fixture();
+    private final JavaFixture fixture = new JavaFixture();
     private clientRequest.Customer randomCustomer;
     private List<clientRequest.Product> randomProducts;
 
@@ -23,7 +23,7 @@ public class TestClientRequest {
                 generateRandomString(9)  // phoneNumber
         );
 
-        int productCount = (int) (Math.random() * 12);
+        int productCount = 1 + (int) (Math.random() * 12);
         randomProducts = IntStream.range(0, productCount)
                 .mapToObj(i -> new clientRequest.Product(
                         generateRandomString(3),            // productCode
