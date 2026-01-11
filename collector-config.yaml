@@ -12,3 +12,7 @@ service:
     traces:
       receivers: [otlp]
       exporters: [debug]
+# zadanie 6 - upewnij sie ze odpiwednie dane znajduja sie w zakladce traces
+# nie znajduja sie bo kontener sie wywala w kazdej konfiguracji innej niz obecna
+# AI twierdzi ze taka konfiguracja wersji openobserve i OT zwyczajnie nie dziala na docker+win
+# inne konfiguracje albo powoduja wywalanie openobserver albo opentelemetry więc zostaje jak jest teraz
