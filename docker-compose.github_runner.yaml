@@ -4,8 +4,8 @@ services:
     container_name: github-runner
     restart: always
     environment:
-      - REPO_URL=https://github.com/USER/REPO
-      - RUNNER_TOKEN=XXXXXXX
+      - REPO_URL=https://github.com/Nejwid/NP
+      - RUNNER_TOKEN=A6LUGTM3DCDTDVWAXEMBYYTJNF6DC
       - RUNNER_NAME=self-hosted-docker
       - RUNNER_LABELS=self-hosted,docker
     volumes:
