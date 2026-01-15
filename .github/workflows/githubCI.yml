@@ -1,12 +1,10 @@
-name: localDockerRunner
+name: testRunner
 
 on:
-  push:
-    branches: [ temp ]
+  workflow_dispatch:
 
 jobs:
-  build:
-    runs-on: [self-hosted, docker]
+  test:
+    runs-on: self-hosted
     steps:
-      - uses: actions/checkout@v4
-      - run: echo "local docker runner is doing its CI job"
+      - run: echo "runner działa"
