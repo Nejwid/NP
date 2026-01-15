@@ -5,6 +5,7 @@ główne cele:
 - skonfigurowanie powtarzalnego procesu CI/CD
 - możliwie dokładne logowanie i analiza zdarzeń
 - symulacja utrzymania w środowisku produkcyjnym i ogólnie bardziej zaawansowana praca z GitLabem
+
 Aplikacja służy do obsługi i walidacji zamówień w sklepie internetowym.
 Podstawowym efektem projektu jest aplikacja Java (Spring Boot) która: jest automatycznie sprawdzana pod kątem jakości kodu, posiada generowaną dokumentację techniczną, jest pakowana do wykonywalnej paczki JAR, może być uruchamiana w kontenerze Docker, ma konfigurację dostosowaną do środowiska kontenerowego.
 Ponadto, jeśli aplikacja jest uruchamiana w dockerze: jest konfigurowana przez zmienne środowiskowe, a dane aplikacji i usług są trwale przechowywane dzięki podpięciu "volumes".
