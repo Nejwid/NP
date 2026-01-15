@@ -2,6 +2,9 @@
 /.mvn/
 /target/
 
+## wykluczam config bo zawiera klucze ssh/rsa
+/config/
+
 *.zip
 *.iml
 
