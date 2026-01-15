@@ -1,4 +1,4 @@
-name: testRunner
+name: local docker runner
 
 on:
   push:
@@ -8,4 +8,24 @@ jobs:
   test:
     runs-on: self-hosted
     steps:
-      - run: echo "runner działa"
+      # 1️⃣ Pobranie kodu z repo
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # 2️⃣ Ustawienie Node.js (przykład Node 20)
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+
+      # 3️⃣ Instalacja zależności
+      - name: Install dependencies
+        run: npm install
+
+      # 4️⃣ Opcjonalny lint
+      - name: Run lint
+        run: npm run lint || echo "lint job"
+
+      # 5️⃣ Uruchomienie testów jednostkowych
+      - name: Run unit tests
+        run: npm test
