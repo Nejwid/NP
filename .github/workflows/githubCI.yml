@@ -1,7 +1,8 @@
 name: testRunner
 
 on:
-  workflow_dispatch:
+  push:
+    branches: [temp]
 
 jobs:
   test:
