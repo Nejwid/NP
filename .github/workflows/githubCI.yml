@@ -12,14 +12,21 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      # 2️⃣ Sprawdzenie systemowej Javy 11
+      # 2️⃣ Setup Javy 11 (zainstalowana przez actions/setup-java)
+      - name: Set up Java 11
+        uses: actions/setup-java@v3
+        with:
+          distribution: temurin
+          java-version: 11
+
+      # 3️⃣ Sprawdzenie wersji Javy
       - name: Check Java version
         run: java -version
 
-      # 3️⃣ Budowanie projektu i uruchomienie testów jednostkowych
+      # 4️⃣ Budowanie projektu i uruchomienie testów jednostkowych
       - name: Build and run unit tests
         run: mvn clean test
 
-      # 4️⃣ (Opcjonalnie) Wyświetlenie raportów testów
+      # 5️⃣ (Opcjonalnie) Wyświetlenie raportów testów
       - name: Show test reports
         run: cat target/surefire-reports/*.txt || echo "No reports found"
