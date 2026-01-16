@@ -12,20 +12,17 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      # 2️⃣ Ustawienie Node.js (przykład Node 20)
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
+      # 2️⃣ Ustawienie Javy 11
+      - name: Set up Java
+        uses: actions/setup-java@v3
         with:
-          node-version: 20
+          distribution: temurin
+          java-version: 11
 
-      # 3️⃣ Instalacja zależności
-      - name: Install dependencies
-        run: npm install
+      # 3️⃣ Budowanie projektu i uruchomienie testów jednostkowych
+      - name: Build and run unit tests
+        run: mvn clean test
 
-      # 4️⃣ Opcjonalny lint
-      - name: Run lint
-        run: npm run lint || echo "lint job"
-
-      # 5️⃣ Uruchomienie testów jednostkowych
-      - name: Run unit tests
-        run: npm test
+      # 4️⃣ (Opcjonalnie) Wyświetlenie raportów testów
+      - name: Show test reports
+        run: cat target/surefire-reports/*.txt || echo "No reports found"
