@@ -1,4 +1,4 @@
-name: local docker runner
+name: local docker runner (unit tests)
 
 on:
   push:
