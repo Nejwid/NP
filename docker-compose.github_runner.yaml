@@ -10,3 +10,8 @@ services:
       - RUNNER_LABELS=self-hosted,docker
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
+    command: >
+      /bin/bash -c "
+        apt-get update && 
+        apt-get install -y maven &&
+        /entrypoint.sh"
