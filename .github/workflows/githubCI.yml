@@ -12,10 +12,9 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      # 2️⃣ Ustawienie Javy 11
-      - name: Use system Java
-      - run: java -version
-
+      # 2️⃣ Sprawdzenie systemowej Javy 11
+      - name: Check Java version
+        run: java -version
 
       # 3️⃣ Budowanie projektu i uruchomienie testów jednostkowych
       - name: Build and run unit tests
